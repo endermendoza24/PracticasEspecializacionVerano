@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VentaComputadorasModelStoreContainer" CdmEntityContainer="VentaComputadorasEntities">
+    <EntitySetMapping Name="catArticulos">
+      <EntityTypeMapping TypeName="VentaComputadorasModel.catArticulos">
+        <MappingFragment StoreEntitySet="catArticulos">
+          <ScalarProperty Name="codigoArticulo" ColumnName="codigoArticulo" />
+          <ScalarProperty Name="nombreArticulo" ColumnName="nombreArticulo" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="catBodega">
+      <EntityTypeMapping TypeName="VentaComputadorasModel.catBodega">
+        <MappingFragment StoreEntitySet="catBodega">
+          <ScalarProperty Name="idBodega" ColumnName="idBodega" />
+          <ScalarProperty Name="nombreBodega" ColumnName="nombreBodega" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="catCategorias">
+      <EntityTypeMapping TypeName="VentaComputadorasModel.catCategorias">
+        <MappingFragment StoreEntitySet="catCategorias">
+          <ScalarProperty Name="codigoCategoria" ColumnName="codigoCategoria" />
+          <ScalarProperty Name="nombreCategoria" ColumnName="nombreCategoria" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="catEmpleados">
+      <EntityTypeMapping TypeName="VentaComputadorasModel.catEmpleados">
+        <MappingFragment StoreEntitySet="catEmpleados">
+          <ScalarProperty Name="codigoEmpleado" ColumnName="codigoEmpleado" />
+          <ScalarProperty Name="nombreEmpleado" ColumnName="nombreEmpleado" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="catMarcas">
+      <EntityTypeMapping TypeName="VentaComputadorasModel.catMarcas">
+        <MappingFragment StoreEntitySet="catMarcas">
+          <ScalarProperty Name="codigoMarca" ColumnName="codigoMarca" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="catProveedores">
+      <EntityTypeMapping TypeName="VentaComputadorasModel.catProveedores">
+        <MappingFragment StoreEntitySet="catProveedores">
+          <ScalarProperty Name="codigoProveedor" ColumnName="codigoProveedor" />
+          <ScalarProperty Name="nombreEmpresa" ColumnName="nombreEmpresa" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="VentaComputadorasModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCompras">
+      <EntityTypeMapping TypeName="VentaComputadorasModel.tblCompras">
+        <MappingFragment StoreEntitySet="tblCompras">
+          <ScalarProperty Name="codigoCompra" ColumnName="codigoCompra" />
+          <ScalarProperty Name="fechaCompra" ColumnName="fechaCompra" />
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+          <ScalarProperty Name="IVA" ColumnName="IVA" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblComprasDetalle">
+      <EntityTypeMapping TypeName="VentaComputadorasModel.tblComprasDetalle">
+        <MappingFragment StoreEntitySet="tblComprasDetalle">
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="idArticulo" ColumnName="idArticulo" />
+          <ScalarProperty Name="nombreArticulo" ColumnName="nombreArticulo" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="precioUnitario" ColumnName="precioUnitario" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="idMarca" ColumnName="idMarca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProductosAlmacen">
+      <EntityTypeMapping TypeName="VentaComputadorasModel.tblProductosAlmacen">
+        <MappingFragment StoreEntitySet="tblProductosAlmacen">
+          <ScalarProperty Name="codigoArticuloBodega" ColumnName="codigoArticuloBodega" />
+          <ScalarProperty Name="Costo" ColumnName="Costo" />
+          <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
+          <ScalarProperty Name="Existencia" ColumnName="Existencia" />
+          <ScalarProperty Name="Lote" ColumnName="Lote" />
+          <ScalarProperty Name="idMarca" ColumnName="idMarca" />
+          <ScalarProperty Name="idArticulo" ColumnName="idArticulo" />
+          <ScalarProperty Name="idBodega" ColumnName="idBodega" />
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVentas">
+      <EntityTypeMapping TypeName="VentaComputadorasModel.tblVentas">
+        <MappingFragment StoreEntitySet="tblVentas">
+          <ScalarProperty Name="codigoVentas" ColumnName="codigoVentas" />
+          <ScalarProperty Name="FechaVenta" ColumnName="FechaVenta" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+          <ScalarProperty Name="IVA" ColumnName="IVA" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVentasDetalle">
+      <EntityTypeMapping TypeName="VentaComputadorasModel.tblVentasDetalle">
+        <MappingFragment StoreEntitySet="tblVentasDetalle">
+          <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+          <ScalarProperty Name="idArticulo" ColumnName="idArticulo" />
+          <ScalarProperty Name="nombreProducto" ColumnName="nombreProducto" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="codigoVentaDetalles" ColumnName="codigoVentaDetalles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="VentaComputadorasModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="VentaComputadorasModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="VentaComputadorasModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="VentaComputadorasModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VentaComputadorasModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="VentaComputadorasModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VentaComputadorasModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="VentaComputadorasModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="VentaComputadorasModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="spEliminar" FunctionName="VentaComputadorasModel.Store.spEliminar" />
+    <FunctionImportMapping FunctionImportName="spEliminarCompra" FunctionName="VentaComputadorasModel.Store.spEliminarCompra" />
+    <FunctionImportMapping FunctionImportName="spInsertar" FunctionName="VentaComputadorasModel.Store.spInsertar" />
+    <FunctionImportMapping FunctionImportName="spInsertarCompra" FunctionName="VentaComputadorasModel.Store.spInsertarCompra" />
+    <FunctionImportMapping FunctionImportName="spModificar" FunctionName="VentaComputadorasModel.Store.spModificar" />
+    <FunctionImportMapping FunctionImportName="spModificarCompra" FunctionName="VentaComputadorasModel.Store.spModificarCompra" />
+  </EntityContainerMapping>
+</Mapping>

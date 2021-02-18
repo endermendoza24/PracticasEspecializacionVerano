@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e9bc756f2a294c859540712c7d93621a" Name="Diagram1">
+        <EntityTypeShape EntityType="VentaComputadorasModel.catArticulos" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VentaComputadorasModel.catBodega" Width="1.5" PointX="6" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VentaComputadorasModel.catCategorias" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VentaComputadorasModel.catEmpleados" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="VentaComputadorasModel.catMarcas" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VentaComputadorasModel.catProveedores" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VentaComputadorasModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VentaComputadorasModel.tblCompras" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VentaComputadorasModel.tblComprasDetalle" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VentaComputadorasModel.tblProductosAlmacen" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VentaComputadorasModel.tblVentas" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VentaComputadorasModel.tblVentasDetalle" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="VentaComputadorasModel.catArticulos_idCategoria_catCategorias_codigoCategoria" ManuallyRouted="false" />
+        <AssociationConnector Association="VentaComputadorasModel.tblComprasDetalle_idArticulo_catArticulos_codigoArticulo" ManuallyRouted="false" />
+        <AssociationConnector Association="VentaComputadorasModel.tblProductosAlmacen_idArticulo_catArticulos_codigoArticulo" ManuallyRouted="false" />
+        <AssociationConnector Association="VentaComputadorasModel.tblVentasDetalle_idArticulo_catArticulos_codigoArticulo" ManuallyRouted="false" />
+        <AssociationConnector Association="VentaComputadorasModel.tblProductosAlmacen_idBodega_catBodega_idBodega" ManuallyRouted="false" />
+        <AssociationConnector Association="VentaComputadorasModel.tblVentas_idEmpleado_catEmpleados_codigoEmpleado" ManuallyRouted="false" />
+        <AssociationConnector Association="VentaComputadorasModel.tblComprasDetalle_idMarca_catMarcas_codigoMarca" ManuallyRouted="false" />
+        <AssociationConnector Association="VentaComputadorasModel.tblProductosAlmacen_idMarca_catMarcas_codigoMarca" ManuallyRouted="false" />
+        <AssociationConnector Association="VentaComputadorasModel.tblCompras_idProveedor_catProveedores_codigoProveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="VentaComputadorasModel.tblComprasDetalle_idCompra_tblCompras_codigoCompra" ManuallyRouted="false" />
+        <AssociationConnector Association="VentaComputadorasModel.tblVentasDetalle_idVenta_tblVentas_codigoVentas" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

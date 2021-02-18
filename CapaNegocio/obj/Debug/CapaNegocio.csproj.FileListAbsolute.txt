@@ -1,0 +1,9 @@
+C:\Users\HP\Documents\Visual Studio 2015\Projects\VentaInformatica\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\HP\Documents\Visual Studio 2015\Projects\VentaInformatica\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\HP\Documents\Visual Studio 2015\Projects\VentaInformatica\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\HP\Documents\Visual Studio 2015\Projects\VentaInformatica\CapaNegocio\bin\Debug\EntityFramework.dll
+C:\Users\HP\Documents\Visual Studio 2015\Projects\VentaInformatica\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\HP\Documents\Visual Studio 2015\Projects\VentaInformatica\CapaNegocio\bin\Debug\EntityFramework.xml
+C:\Users\HP\Documents\Visual Studio 2015\Projects\VentaInformatica\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
+C:\Users\HP\Documents\Visual Studio 2015\Projects\VentaInformatica\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\HP\Documents\Visual Studio 2015\Projects\VentaInformatica\CapaNegocio\obj\Debug\CapaNegocio.pdb

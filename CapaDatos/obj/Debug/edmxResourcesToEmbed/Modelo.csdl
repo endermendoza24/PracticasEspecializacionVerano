@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VentaComputadorasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="catArticulos">
+    <Key>
+      <PropertyRef Name="codigoArticulo" />
+    </Key>
+    <Property Name="codigoArticulo" Type="Int32" Nullable="false" />
+    <Property Name="nombreArticulo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idCategoria" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="catCategorias" Relationship="Self.catArticulos_idCategoria_catCategorias_codigoCategoria" FromRole="catArticulos" ToRole="catCategorias" />
+    <NavigationProperty Name="tblComprasDetalle" Relationship="Self.tblComprasDetalle_idArticulo_catArticulos_codigoArticulo" FromRole="catArticulos" ToRole="tblComprasDetalle" />
+    <NavigationProperty Name="tblProductosAlmacen" Relationship="Self.tblProductosAlmacen_idArticulo_catArticulos_codigoArticulo" FromRole="catArticulos" ToRole="tblProductosAlmacen" />
+    <NavigationProperty Name="tblVentasDetalle" Relationship="Self.tblVentasDetalle_idArticulo_catArticulos_codigoArticulo" FromRole="catArticulos" ToRole="tblVentasDetalle" />
+  </EntityType>
+  <EntityType Name="catBodega">
+    <Key>
+      <PropertyRef Name="idBodega" />
+    </Key>
+    <Property Name="idBodega" Type="Int32" Nullable="false" />
+    <Property Name="nombreBodega" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblProductosAlmacen" Relationship="Self.tblProductosAlmacen_idBodega_catBodega_idBodega" FromRole="catBodega" ToRole="tblProductosAlmacen" />
+  </EntityType>
+  <EntityType Name="catCategorias">
+    <Key>
+      <PropertyRef Name="codigoCategoria" />
+    </Key>
+    <Property Name="codigoCategoria" Type="Int32" Nullable="false" />
+    <Property Name="nombreCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="catArticulos" Relationship="Self.catArticulos_idCategoria_catCategorias_codigoCategoria" FromRole="catCategorias" ToRole="catArticulos" />
+  </EntityType>
+  <EntityType Name="catEmpleados">
+    <Key>
+      <PropertyRef Name="codigoEmpleado" />
+    </Key>
+    <Property Name="codigoEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="nombreEmpleado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="primerApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="segundoApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblVentas" Relationship="Self.tblVentas_idEmpleado_catEmpleados_codigoEmpleado" FromRole="catEmpleados" ToRole="tblVentas" />
+  </EntityType>
+  <EntityType Name="catMarcas">
+    <Key>
+      <PropertyRef Name="codigoMarca" />
+    </Key>
+    <Property Name="codigoMarca" Type="Int32" Nullable="false" />
+    <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Descripción" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblComprasDetalle" Relationship="Self.tblComprasDetalle_idMarca_catMarcas_codigoMarca" FromRole="catMarcas" ToRole="tblComprasDetalle" />
+    <NavigationProperty Name="tblProductosAlmacen" Relationship="Self.tblProductosAlmacen_idMarca_catMarcas_codigoMarca" FromRole="catMarcas" ToRole="tblProductosAlmacen" />
+  </EntityType>
+  <EntityType Name="catProveedores">
+    <Key>
+      <PropertyRef Name="codigoProveedor" />
+    </Key>
+    <Property Name="codigoProveedor" Type="Int32" Nullable="false" />
+    <Property Name="nombreEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblCompras" Relationship="Self.tblCompras_idProveedor_catProveedores_codigoProveedor" FromRole="catProveedores" ToRole="tblCompras" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tblCompras">
+    <Key>
+      <PropertyRef Name="codigoCompra" />
+    </Key>
+    <Property Name="codigoCompra" Type="Int32" Nullable="false" />
+    <Property Name="fechaCompra" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="idEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IVA" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Descuento" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="idProveedor" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="catProveedores" Relationship="Self.tblCompras_idProveedor_catProveedores_codigoProveedor" FromRole="tblCompras" ToRole="catProveedores" />
+    <NavigationProperty Name="tblComprasDetalle" Relationship="Self.tblComprasDetalle_idCompra_tblCompras_codigoCompra" FromRole="tblCompras" ToRole="tblComprasDetalle" />
+  </EntityType>
+  <EntityType Name="tblComprasDetalle">
+    <Key>
+      <PropertyRef Name="idCompra" />
+      <PropertyRef Name="idArticulo" />
+    </Key>
+    <Property Name="idCompra" Type="Int32" Nullable="false" />
+    <Property Name="idArticulo" Type="Int32" Nullable="false" />
+    <Property Name="nombreArticulo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="precioUnitario" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Descuento" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="idMarca" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="catArticulos" Relationship="Self.tblComprasDetalle_idArticulo_catArticulos_codigoArticulo" FromRole="tblComprasDetalle" ToRole="catArticulos" />
+    <NavigationProperty Name="catMarcas" Relationship="Self.tblComprasDetalle_idMarca_catMarcas_codigoMarca" FromRole="tblComprasDetalle" ToRole="catMarcas" />
+    <NavigationProperty Name="tblCompras" Relationship="Self.tblComprasDetalle_idCompra_tblCompras_codigoCompra" FromRole="tblComprasDetalle" ToRole="tblCompras" />
+  </EntityType>
+  <EntityType Name="tblProductosAlmacen">
+    <Key>
+      <PropertyRef Name="codigoArticuloBodega" />
+    </Key>
+    <Property Name="codigoArticuloBodega" Type="Int32" Nullable="false" />
+    <Property Name="Costo" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="precioVenta" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Existencia" Type="Int32" Nullable="false" />
+    <Property Name="Lote" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idMarca" Type="Int32" Nullable="false" />
+    <Property Name="idArticulo" Type="Int32" Nullable="false" />
+    <Property Name="idBodega" Type="Int32" Nullable="false" />
+    <Property Name="idCompra" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="catArticulos" Relationship="Self.tblProductosAlmacen_idArticulo_catArticulos_codigoArticulo" FromRole="tblProductosAlmacen" ToRole="catArticulos" />
+    <NavigationProperty Name="catBodega" Relationship="Self.tblProductosAlmacen_idBodega_catBodega_idBodega" FromRole="tblProductosAlmacen" ToRole="catBodega" />
+    <NavigationProperty Name="catMarcas" Relationship="Self.tblProductosAlmacen_idMarca_catMarcas_codigoMarca" FromRole="tblProductosAlmacen" ToRole="catMarcas" />
+  </EntityType>
+  <EntityType Name="tblVentas">
+    <Key>
+      <PropertyRef Name="codigoVentas" />
+    </Key>
+    <Property Name="codigoVentas" Type="Int32" Nullable="false" />
+    <Property Name="FechaVenta" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IVA" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Descuento" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="idEmpleado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="catEmpleados" Relationship="Self.tblVentas_idEmpleado_catEmpleados_codigoEmpleado" FromRole="tblVentas" ToRole="catEmpleados" />
+    <NavigationProperty Name="tblVentasDetalle" Relationship="Self.tblVentasDetalle_idVenta_tblVentas_codigoVentas" FromRole="tblVentas" ToRole="tblVentasDetalle" />
+  </EntityType>
+  <EntityType Name="tblVentasDetalle">
+    <Key>
+      <PropertyRef Name="codigoVentaDetalles" />
+    </Key>
+    <Property Name="idVenta" Type="Int32" Nullable="false" />
+    <Property Name="idArticulo" Type="Int32" Nullable="false" />
+    <Property Name="nombreProducto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="PrecioUnitario" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Descuento" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="codigoVentaDetalles" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="catArticulos" Relationship="Self.tblVentasDetalle_idArticulo_catArticulos_codigoArticulo" FromRole="tblVentasDetalle" ToRole="catArticulos" />
+    <NavigationProperty Name="tblVentas" Relationship="Self.tblVentasDetalle_idVenta_tblVentas_codigoVentas" FromRole="tblVentasDetalle" ToRole="tblVentas" />
+  </EntityType>
+  <Association Name="catArticulos_idCategoria_catCategorias_codigoCategoria">
+    <End Role="catCategorias" Type="Self.catCategorias" Multiplicity="1" />
+    <End Role="catArticulos" Type="Self.catArticulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="catCategorias">
+        <PropertyRef Name="codigoCategoria" />
+      </Principal>
+      <Dependent Role="catArticulos">
+        <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblComprasDetalle_idArticulo_catArticulos_codigoArticulo">
+    <End Role="catArticulos" Type="Self.catArticulos" Multiplicity="1" />
+    <End Role="tblComprasDetalle" Type="Self.tblComprasDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="catArticulos">
+        <PropertyRef Name="codigoArticulo" />
+      </Principal>
+      <Dependent Role="tblComprasDetalle">
+        <PropertyRef Name="idArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblProductosAlmacen_idArticulo_catArticulos_codigoArticulo">
+    <End Role="catArticulos" Type="Self.catArticulos" Multiplicity="1" />
+    <End Role="tblProductosAlmacen" Type="Self.tblProductosAlmacen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="catArticulos">
+        <PropertyRef Name="codigoArticulo" />
+      </Principal>
+      <Dependent Role="tblProductosAlmacen">
+        <PropertyRef Name="idArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblVentasDetalle_idArticulo_catArticulos_codigoArticulo">
+    <End Role="catArticulos" Type="Self.catArticulos" Multiplicity="1" />
+    <End Role="tblVentasDetalle" Type="Self.tblVentasDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="catArticulos">
+        <PropertyRef Name="codigoArticulo" />
+      </Principal>
+      <Dependent Role="tblVentasDetalle">
+        <PropertyRef Name="idArticulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblProductosAlmacen_idBodega_catBodega_idBodega">
+    <End Role="catBodega" Type="Self.catBodega" Multiplicity="1" />
+    <End Role="tblProductosAlmacen" Type="Self.tblProductosAlmacen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="catBodega">
+        <PropertyRef Name="idBodega" />
+      </Principal>
+      <Dependent Role="tblProductosAlmacen">
+        <PropertyRef Name="idBodega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblVentas_idEmpleado_catEmpleados_codigoEmpleado">
+    <End Role="catEmpleados" Type="Self.catEmpleados" Multiplicity="1" />
+    <End Role="tblVentas" Type="Self.tblVentas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="catEmpleados">
+        <PropertyRef Name="codigoEmpleado" />
+      </Principal>
+      <Dependent Role="tblVentas">
+        <PropertyRef Name="idEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblComprasDetalle_idMarca_catMarcas_codigoMarca">
+    <End Role="catMarcas" Type="Self.catMarcas" Multiplicity="1" />
+    <End Role="tblComprasDetalle" Type="Self.tblComprasDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="catMarcas">
+        <PropertyRef Name="codigoMarca" />
+      </Principal>
+      <Dependent Role="tblComprasDetalle">
+        <PropertyRef Name="idMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblProductosAlmacen_idMarca_catMarcas_codigoMarca">
+    <End Role="catMarcas" Type="Self.catMarcas" Multiplicity="1" />
+    <End Role="tblProductosAlmacen" Type="Self.tblProductosAlmacen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="catMarcas">
+        <PropertyRef Name="codigoMarca" />
+      </Principal>
+      <Dependent Role="tblProductosAlmacen">
+        <PropertyRef Name="idMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblCompras_idProveedor_catProveedores_codigoProveedor">
+    <End Role="catProveedores" Type="Self.catProveedores" Multiplicity="1" />
+    <End Role="tblCompras" Type="Self.tblCompras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="catProveedores">
+        <PropertyRef Name="codigoProveedor" />
+      </Principal>
+      <Dependent Role="tblCompras">
+        <PropertyRef Name="idProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblComprasDetalle_idCompra_tblCompras_codigoCompra">
+    <End Role="tblCompras" Type="Self.tblCompras" Multiplicity="1" />
+    <End Role="tblComprasDetalle" Type="Self.tblComprasDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCompras">
+        <PropertyRef Name="codigoCompra" />
+      </Principal>
+      <Dependent Role="tblComprasDetalle">
+        <PropertyRef Name="idCompra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="tblVentasDetalle_idVenta_tblVentas_codigoVentas">
+    <End Role="tblVentas" Type="Self.tblVentas" Multiplicity="1" />
+    <End Role="tblVentasDetalle" Type="Self.tblVentasDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblVentas">
+        <PropertyRef Name="codigoVentas" />
+      </Principal>
+      <Dependent Role="tblVentasDetalle">
+        <PropertyRef Name="idVenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="VentaComputadorasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="catArticulos" EntityType="Self.catArticulos" />
+    <EntitySet Name="catBodega" EntityType="Self.catBodega" />
+    <EntitySet Name="catCategorias" EntityType="Self.catCategorias" />
+    <EntitySet Name="catEmpleados" EntityType="Self.catEmpleados" />
+    <EntitySet Name="catMarcas" EntityType="Self.catMarcas" />
+    <EntitySet Name="catProveedores" EntityType="Self.catProveedores" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tblCompras" EntityType="Self.tblCompras" />
+    <EntitySet Name="tblComprasDetalle" EntityType="Self.tblComprasDetalle" />
+    <EntitySet Name="tblProductosAlmacen" EntityType="Self.tblProductosAlmacen" />
+    <EntitySet Name="tblVentas" EntityType="Self.tblVentas" />
+    <EntitySet Name="tblVentasDetalle" EntityType="Self.tblVentasDetalle" />
+    <AssociationSet Name="catArticulos_idCategoria_catCategorias_codigoCategoria" Association="Self.catArticulos_idCategoria_catCategorias_codigoCategoria">
+      <End Role="catCategorias" EntitySet="catCategorias" />
+      <End Role="catArticulos" EntitySet="catArticulos" />
+    </AssociationSet>
+    <AssociationSet Name="tblComprasDetalle_idArticulo_catArticulos_codigoArticulo" Association="Self.tblComprasDetalle_idArticulo_catArticulos_codigoArticulo">
+      <End Role="catArticulos" EntitySet="catArticulos" />
+      <End Role="tblComprasDetalle" EntitySet="tblComprasDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="tblProductosAlmacen_idArticulo_catArticulos_codigoArticulo" Association="Self.tblProductosAlmacen_idArticulo_catArticulos_codigoArticulo">
+      <End Role="catArticulos" EntitySet="catArticulos" />
+      <End Role="tblProductosAlmacen" EntitySet="tblProductosAlmacen" />
+    </AssociationSet>
+    <AssociationSet Name="tblVentasDetalle_idArticulo_catArticulos_codigoArticulo" Association="Self.tblVentasDetalle_idArticulo_catArticulos_codigoArticulo">
+      <End Role="catArticulos" EntitySet="catArticulos" />
+      <End Role="tblVentasDetalle" EntitySet="tblVentasDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="tblProductosAlmacen_idBodega_catBodega_idBodega" Association="Self.tblProductosAlmacen_idBodega_catBodega_idBodega">
+      <End Role="catBodega" EntitySet="catBodega" />
+      <End Role="tblProductosAlmacen" EntitySet="tblProductosAlmacen" />
+    </AssociationSet>
+    <AssociationSet Name="tblVentas_idEmpleado_catEmpleados_codigoEmpleado" Association="Self.tblVentas_idEmpleado_catEmpleados_codigoEmpleado">
+      <End Role="catEmpleados" EntitySet="catEmpleados" />
+      <End Role="tblVentas" EntitySet="tblVentas" />
+    </AssociationSet>
+    <AssociationSet Name="tblComprasDetalle_idMarca_catMarcas_codigoMarca" Association="Self.tblComprasDetalle_idMarca_catMarcas_codigoMarca">
+      <End Role="catMarcas" EntitySet="catMarcas" />
+      <End Role="tblComprasDetalle" EntitySet="tblComprasDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="tblProductosAlmacen_idMarca_catMarcas_codigoMarca" Association="Self.tblProductosAlmacen_idMarca_catMarcas_codigoMarca">
+      <End Role="catMarcas" EntitySet="catMarcas" />
+      <End Role="tblProductosAlmacen" EntitySet="tblProductosAlmacen" />
+    </AssociationSet>
+    <AssociationSet Name="tblCompras_idProveedor_catProveedores_codigoProveedor" Association="Self.tblCompras_idProveedor_catProveedores_codigoProveedor">
+      <End Role="catProveedores" EntitySet="catProveedores" />
+      <End Role="tblCompras" EntitySet="tblCompras" />
+    </AssociationSet>
+    <AssociationSet Name="tblComprasDetalle_idCompra_tblCompras_codigoCompra" Association="Self.tblComprasDetalle_idCompra_tblCompras_codigoCompra">
+      <End Role="tblCompras" EntitySet="tblCompras" />
+      <End Role="tblComprasDetalle" EntitySet="tblComprasDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="tblVentasDetalle_idVenta_tblVentas_codigoVentas" Association="Self.tblVentasDetalle_idVenta_tblVentas_codigoVentas">
+      <End Role="tblVentas" EntitySet="tblVentas" />
+      <End Role="tblVentasDetalle" EntitySet="tblVentasDetalle" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(VentaComputadorasModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(VentaComputadorasModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="spEliminar">
+      <Parameter Name="IdVentaDetalles" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spEliminarCompra">
+      <Parameter Name="idCompra" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spInsertar">
+      <Parameter Name="idVenta" Mode="In" Type="Int32" />
+      <Parameter Name="idArticulo" Mode="In" Type="Int32" />
+      <Parameter Name="nombreProducto" Mode="In" Type="String" />
+      <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="PrecioUnitario" Mode="In" Type="Decimal" />
+      <Parameter Name="Descuento" Mode="In" Type="Decimal" />
+      <Parameter Name="Subtotal" Mode="In" Type="Decimal" />
+      <Parameter Name="Total" Mode="In" Type="Decimal" />
+      <Parameter Name="codigoVentaDetalles" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spInsertarCompra">
+      <Parameter Name="idCompra" Mode="In" Type="Int32" />
+      <Parameter Name="idArticulo" Mode="In" Type="Int32" />
+      <Parameter Name="nombreArticulo" Mode="In" Type="String" />
+      <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="precioUnitario" Mode="In" Type="Decimal" />
+      <Parameter Name="Descuento" Mode="In" Type="Decimal" />
+      <Parameter Name="Total" Mode="In" Type="Decimal" />
+      <Parameter Name="idMarca" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spModificar">
+      <Parameter Name="idVenta" Mode="In" Type="Int32" />
+      <Parameter Name="idArticulo" Mode="In" Type="Int32" />
+      <Parameter Name="nombreProducto" Mode="In" Type="String" />
+      <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="PrecioUnitario" Mode="In" Type="Decimal" />
+      <Parameter Name="Descuento" Mode="In" Type="Decimal" />
+      <Parameter Name="Subtotal" Mode="In" Type="Decimal" />
+      <Parameter Name="Total" Mode="In" Type="Decimal" />
+      <Parameter Name="codigoVentaDetalles" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spModificarCompra">
+      <Parameter Name="idCompra" Mode="In" Type="Int32" />
+      <Parameter Name="idArticulo" Mode="In" Type="Int32" />
+      <Parameter Name="nombreArticulo" Mode="In" Type="String" />
+      <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+      <Parameter Name="precioUnitario" Mode="In" Type="Decimal" />
+      <Parameter Name="Descuento" Mode="In" Type="Decimal" />
+      <Parameter Name="Total" Mode="In" Type="Decimal" />
+      <Parameter Name="idMarca" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>
