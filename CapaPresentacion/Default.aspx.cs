@@ -21,15 +21,15 @@ namespace CapaPresentacion
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            entidades.idVenta = Convert.ToInt32(txtIdventa.Text);
-            entidades.idArticulo = Convert.ToInt32(txtIdArticulo.Text);
-            entidades.nombreProducto = Convert.ToString(txtNombreProducto.Text);
-            entidades.Cantidad = Convert.ToInt32(txtCantidad.Text);
-            entidades.PrecioUnitario = Convert.ToDecimal(txtPrecioUnitario.Text);
-            entidades.Descuento = Convert.ToDecimal(txtDescuento.Text);
-            entidades.Subtotal = Convert.ToDecimal(txtSubtotal.Text);
-            entidades.Total = Convert.ToDecimal(txtTotal.Text);
-            entidades.codigoVentaDetalles = Convert.ToInt32(txtCodVenta.Text);
+            entidades.idVenta = Convert.ToInt32(txtIdVenta.Value);
+            entidades.idArticulo = Convert.ToInt32(txtIdArticulo.Value);
+            entidades.nombreProducto = Convert.ToString(txtNombreProducto.Value);
+            entidades.Cantidad = Convert.ToInt32(txtCantidad.Value);
+            entidades.PrecioUnitario = Convert.ToDecimal(txtPrecioUnitario.Value);
+            entidades.Descuento = Convert.ToDecimal(txtDescuento.Value);
+            entidades.Subtotal = Convert.ToDecimal(txtSubtotal.Value);
+            entidades.Total = Convert.ToDecimal(txtTotal.Value);
+            entidades.codigoVentaDetalles = Convert.ToInt32(txtCodVenta.Value);
             metodoNegocio.insertarVenta(entidades);
 
         }
