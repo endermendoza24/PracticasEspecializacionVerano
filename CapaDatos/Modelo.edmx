@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="VentaComputadorasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="VentaComputadorasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="catArticulos">
           <Key>
             <PropertyRef Name="codigoArticulo" />
@@ -179,18 +179,6 @@
             </Principal>
             <Dependent Role="tblComprasDetalle">
               <PropertyRef Name="idCompra" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="tblComprasDetalle_idMarca_catMarcas_codigoMarca">
-          <End Role="catMarcas" Type="Self.catMarcas" Multiplicity="1" />
-          <End Role="tblComprasDetalle" Type="Self.tblComprasDetalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="catMarcas">
-              <PropertyRef Name="codigoMarca" />
-            </Principal>
-            <Dependent Role="tblComprasDetalle">
-              <PropertyRef Name="idMarca" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -374,10 +362,6 @@
             <End Role="tblCompras" EntitySet="tblCompras" />
             <End Role="tblComprasDetalle" EntitySet="tblComprasDetalle" />
           </AssociationSet>
-          <AssociationSet Name="tblComprasDetalle_idMarca_catMarcas_codigoMarca" Association="Self.tblComprasDetalle_idMarca_catMarcas_codigoMarca">
-            <End Role="catMarcas" EntitySet="catMarcas" />
-            <End Role="tblComprasDetalle" EntitySet="tblComprasDetalle" />
-          </AssociationSet>
           <AssociationSet Name="tblProductosAlmacen_idArticulo_catArticulos_codigoArticulo" Association="Self.tblProductosAlmacen_idArticulo_catArticulos_codigoArticulo">
             <End Role="catArticulos" EntitySet="catArticulos" />
             <End Role="tblProductosAlmacen" EntitySet="tblProductosAlmacen" />
@@ -403,8 +387,7 @@
             <End Role="tblVentasDetalle" EntitySet="tblVentasDetalle" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="VentaComputadorasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -779,10 +762,10 @@
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="spEliminar">
-            <Parameter Name="IdVentaDetalles" Mode="In" Type="Int32" />
+          <Parameter Name="IdVentaDetalles" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spEliminarCompra">
-            <Parameter Name="idCompra" Mode="In" Type="Int32" />
+          <Parameter Name="idCompra" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spInsertar">
             <Parameter Name="idVenta" Mode="In" Type="Int32" />

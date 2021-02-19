@@ -16,13 +16,13 @@ namespace CapaPresentacion
         MetodosNegocio metodoNegocio = new MetodosNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            dtgMostrarDatos.DataBind();
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            entidades.idVenta = Convert.ToInt32(txtIdVenta.Value);
-            entidades.idArticulo = Convert.ToInt32(txtIdArticulo.Value);
+            entidades.idVenta = Convert.ToInt32(txtIdVenta.Text);
+            entidades.idArticulo = Convert.ToInt32(txtIdArticulo.Text);
             entidades.nombreProducto = Convert.ToString(txtNombreProducto.Value);
             entidades.Cantidad = Convert.ToInt32(txtCantidad.Value);
             entidades.PrecioUnitario = Convert.ToDecimal(txtPrecioUnitario.Value);
@@ -31,6 +31,7 @@ namespace CapaPresentacion
             entidades.Total = Convert.ToDecimal(txtTotal.Value);
             entidades.codigoVentaDetalles = Convert.ToInt32(txtCodVenta.Value);
             metodoNegocio.insertarVenta(entidades);
+            dtgMostrarDatos.DataBind();
 
         }
     }

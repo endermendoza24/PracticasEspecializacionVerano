@@ -161,50 +161,49 @@ namespace CapaDatos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spEliminarCompra", idCompraParameter);
         }
-
-        public virtual int spInsertar(int idVenta, int idArticulo, string nombreProducto, int cantidad, decimal precioUnitario, decimal descuento, decimal subtotal, decimal total, Nullable<int> codigoVentaDetalles)
+    
+        public virtual int spInsertar(Nullable<int> idVenta, Nullable<int> idArticulo, string nombreProducto, Nullable<int> cantidad, Nullable<decimal> precioUnitario, Nullable<decimal> descuento, Nullable<decimal> subtotal, Nullable<decimal> total, Nullable<int> codigoVentaDetalles)
         {
-
-            var idVentaParameter = idVenta != null ?
+            var idVentaParameter = idVenta.HasValue ?
                 new ObjectParameter("idVenta", idVenta) :
                 new ObjectParameter("idVenta", typeof(int));
-
-            var idArticuloParameter = idArticulo != null ?
+    
+            var idArticuloParameter = idArticulo.HasValue ?
                 new ObjectParameter("idArticulo", idArticulo) :
                 new ObjectParameter("idArticulo", typeof(int));
-
+    
             var nombreProductoParameter = nombreProducto != null ?
                 new ObjectParameter("nombreProducto", nombreProducto) :
                 new ObjectParameter("nombreProducto", typeof(string));
-
-            var cantidadParameter = cantidad != null ?
+    
+            var cantidadParameter = cantidad.HasValue ?
                 new ObjectParameter("Cantidad", cantidad) :
                 new ObjectParameter("Cantidad", typeof(int));
-
-            var precioUnitarioParameter = precioUnitario != null ?
+    
+            var precioUnitarioParameter = precioUnitario.HasValue ?
                 new ObjectParameter("PrecioUnitario", precioUnitario) :
                 new ObjectParameter("PrecioUnitario", typeof(decimal));
-
-            var descuentoParameter = descuento != null?
+    
+            var descuentoParameter = descuento.HasValue ?
                 new ObjectParameter("Descuento", descuento) :
                 new ObjectParameter("Descuento", typeof(decimal));
-
-            var subtotalParameter = subtotal != null ?
+    
+            var subtotalParameter = subtotal.HasValue ?
                 new ObjectParameter("Subtotal", subtotal) :
                 new ObjectParameter("Subtotal", typeof(decimal));
-
-            var totalParameter = total != null ?
+    
+            var totalParameter = total.HasValue ?
                 new ObjectParameter("Total", total) :
                 new ObjectParameter("Total", typeof(decimal));
-
+    
             var codigoVentaDetallesParameter = codigoVentaDetalles.HasValue ?
                 new ObjectParameter("codigoVentaDetalles", codigoVentaDetalles) :
                 new ObjectParameter("codigoVentaDetalles", typeof(int));
-
+    
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertar", idVentaParameter, idArticuloParameter, nombreProductoParameter, cantidadParameter, precioUnitarioParameter, descuentoParameter, subtotalParameter, totalParameter, codigoVentaDetallesParameter);
         }
-
-        public virtual int spInsertarCompra(int? idCompra, int? idArticulo, string nombreArticulo, int? cantidad, decimal? precioUnitario, decimal? descuento, decimal? total, int? idMarca)
+    
+        public virtual int spInsertarCompra(Nullable<int> idCompra, Nullable<int> idArticulo, string nombreArticulo, Nullable<int> cantidad, Nullable<decimal> precioUnitario, Nullable<decimal> descuento, Nullable<decimal> total, Nullable<int> idMarca)
         {
             var idCompraParameter = idCompra.HasValue ?
                 new ObjectParameter("idCompra", idCompra) :

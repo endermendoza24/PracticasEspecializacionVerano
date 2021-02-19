@@ -10,6 +10,7 @@ namespace CapaNegocio
    public class MetodosNegocio
     {
         MetodosVenta metodoVenta = new MetodosVenta();
+        MetodosCompras metodoCompra = new MetodosCompras();
 
         public bool insertarVenta(EntidadesVentas entidad)
         {
@@ -22,10 +23,24 @@ namespace CapaNegocio
             tabla.Descuento = entidad.Descuento;
             tabla.Subtotal = entidad.Subtotal;
             tabla.Total = entidad.Total;
-            tabla.codigoVentaDetalles = tabla.codigoVentaDetalles;
+            tabla.codigoVentaDetalles = entidad.codigoVentaDetalles;
             return metodoVenta.insertarVenta(tabla);
         }
 
+        public bool insertarCompra(EntidadesCompras entidad)
+        {
+            tblComprasDetalle tabla = new tblComprasDetalle();
+            tabla.idCompra = entidad.idCompra;
+            tabla.idArticulo = entidad.idArticulo;
+            tabla.nombreArticulo = entidad.nombreArticulo;
+            tabla.Cantidad = entidad.Cantidad;
+            tabla.precioUnitario = entidad.precioUnitario;
+            tabla.Descuento = entidad.Descuento;
+            tabla.Total = entidad.Total;
+            tabla.idMarca = entidad.idMarca;
+
+            return metodoCompra.insertarCompra(tabla);
+        }
         public bool modificarVenta(EntidadesVentas entidad)
         {
             tblVentasDetalle tabla = new tblVentasDetalle();

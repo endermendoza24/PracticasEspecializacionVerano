@@ -177,18 +177,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tblComprasDetalle_idMarca_catMarcas_codigoMarca">
-    <End Role="catMarcas" Type="Self.catMarcas" Multiplicity="1" />
-    <End Role="tblComprasDetalle" Type="Self.tblComprasDetalle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="catMarcas">
-        <PropertyRef Name="codigoMarca" />
-      </Principal>
-      <Dependent Role="tblComprasDetalle">
-        <PropertyRef Name="idMarca" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="tblProductosAlmacen_idArticulo_catArticulos_codigoArticulo">
     <End Role="catArticulos" Type="Self.catArticulos" Multiplicity="1" />
     <End Role="tblProductosAlmacen" Type="Self.tblProductosAlmacen" Multiplicity="*" />
@@ -367,10 +355,6 @@
     </AssociationSet>
     <AssociationSet Name="tblComprasDetalle_idCompra_tblCompras_codigoCompra" Association="Self.tblComprasDetalle_idCompra_tblCompras_codigoCompra">
       <End Role="tblCompras" EntitySet="tblCompras" />
-      <End Role="tblComprasDetalle" EntitySet="tblComprasDetalle" />
-    </AssociationSet>
-    <AssociationSet Name="tblComprasDetalle_idMarca_catMarcas_codigoMarca" Association="Self.tblComprasDetalle_idMarca_catMarcas_codigoMarca">
-      <End Role="catMarcas" EntitySet="catMarcas" />
       <End Role="tblComprasDetalle" EntitySet="tblComprasDetalle" />
     </AssociationSet>
     <AssociationSet Name="tblProductosAlmacen_idArticulo_catArticulos_codigoArticulo" Association="Self.tblProductosAlmacen_idArticulo_catArticulos_codigoArticulo">

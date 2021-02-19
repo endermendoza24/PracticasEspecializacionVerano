@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="VentaComputadorasModel.catBodega" Width="1.5" PointX="6" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="VentaComputadorasModel.catCategorias" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="VentaComputadorasModel.catEmpleados" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="VentaComputadorasModel.catMarcas" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VentaComputadorasModel.catMarcas" Width="1.5" PointX="1.125" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="VentaComputadorasModel.catProveedores" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
         <EntityTypeShape EntityType="VentaComputadorasModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="VentaComputadorasModel.tblCompras" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />

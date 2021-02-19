@@ -95,8 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bootstrap\bootstrap.min.css" />
+    <Content Include="compraDetalle.aspx" />
     <Content Include="css\styles.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="ventasDetalles.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -121,12 +122,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="compraDetalle.aspx.cs">
+      <DependentUpon>compraDetalle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="compraDetalle.aspx.designer.cs">
+      <DependentUpon>compraDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ventasDetalles.aspx.cs">
+      <DependentUpon>ventasDetalles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ventasDetalles.aspx.designer.cs">
+      <DependentUpon>ventasDetalles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

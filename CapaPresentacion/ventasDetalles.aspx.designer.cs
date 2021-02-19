@@ -19,7 +19,16 @@ namespace CapaPresentacion {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtIdVenta;
+        protected global::System.Web.UI.WebControls.DropDownList txtIdVenta;
+        
+        /// <summary>
+        /// Control tablaVentas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource tablaVentas;
         
         /// <summary>
         /// Control txtIdArticulo.
@@ -28,7 +37,16 @@ namespace CapaPresentacion {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtIdArticulo;
+        protected global::System.Web.UI.WebControls.DropDownList txtIdArticulo;
+        
+        /// <summary>
+        /// Control tablaArt.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource tablaArt;
         
         /// <summary>
         /// Control txtNombreProducto.
