@@ -66,8 +66,10 @@
     <Compile Include="catProveedores.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntidadesAlmacen.cs" />
     <Compile Include="EntidadesCompras.cs" />
     <Compile Include="EntidadesVentas.cs" />
+    <Compile Include="MetodosAlmacen.cs" />
     <Compile Include="MetodosCompras.cs" />
     <Compile Include="MetodosVenta.cs" />
     <Compile Include="Modelo.Context.cs">

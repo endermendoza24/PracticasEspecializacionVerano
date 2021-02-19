@@ -25,18 +25,18 @@ namespace CapaPresentacion
             {
                 entidadCompra.idCompra = Convert.ToInt32(txtIdCompra.Text);
                 entidadCompra.idArticulo = Convert.ToInt32(txtIdArticulo.Text);
-                entidadCompra.nombreArticulo = Convert.ToString(txtNombreArticulo.Text);
-                entidadCompra.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                entidadCompra.precioUnitario = Convert.ToDecimal(txtPrecioUnitario.Text);
-                entidadCompra.Descuento = Convert.ToDecimal(txtDescuento.Text);
-                entidadCompra.Total = Convert.ToDecimal(txtTotal.Text);
-                entidadCompra.idMarca = Convert.ToInt32(txtIdMarca.Text);
+                entidadCompra.nombreArticulo = Convert.ToString(txtNombreArticulo.Value);
+                entidadCompra.Cantidad = Convert.ToInt32(txtCantidad.Value);
+                entidadCompra.precioUnitario = Convert.ToDecimal(txtPrecioUnitario.Value);
+                entidadCompra.Descuento = Convert.ToDecimal(txtDescuento.Value);
+                entidadCompra.Total = Convert.ToDecimal(txtTotal.Value);
+                entidadCompra.idMarca = Convert.ToInt32(txtIdMarca.Value);
                 metodo.insertarCompra(entidadCompra);
                 gvMostrarCompras.DataBind();
             }
             catch (Exception)
             {
-
+                gvMostrarCompras.DataBind();
                 Response.Redirect("ventasDetalles.aspx");
             }
         }

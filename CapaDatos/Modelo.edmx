@@ -312,6 +312,18 @@
           <Parameter Name="Total" Type="decimal" Mode="In" />
           <Parameter Name="idMarca" Type="int" Mode="In" />
         </Function>
+        <Function Name="spInsertarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigoArticuloBodega" Type="int" Mode="In" />
+          <Parameter Name="Costo" Type="decimal" Mode="In" />
+          <Parameter Name="precioVenta" Type="decimal" Mode="In" />
+          <Parameter Name="Existencia" Type="int" Mode="In" />
+          <Parameter Name="Lote" Type="nvarchar" Mode="In" />
+          <Parameter Name="idMarca" Type="int" Mode="In" />
+          <Parameter Name="idArticulo" Type="int" Mode="In" />
+          <Parameter Name="idBodega" Type="int" Mode="In" />
+          <Parameter Name="idCompra" Type="int" Mode="In" />
+          <Parameter Name="Descripcion" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="spModificar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idVenta" Type="int" Mode="In" />
           <Parameter Name="idArticulo" Type="int" Mode="In" />
@@ -809,6 +821,18 @@
             <Parameter Name="Total" Mode="In" Type="Decimal" />
             <Parameter Name="idMarca" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="spInsertarProducto">
+            <Parameter Name="codigoArticuloBodega" Mode="In" Type="Int32" />
+            <Parameter Name="Costo" Mode="In" Type="Decimal" />
+            <Parameter Name="precioVenta" Mode="In" Type="Decimal" />
+            <Parameter Name="Existencia" Mode="In" Type="Int32" />
+            <Parameter Name="Lote" Mode="In" Type="String" />
+            <Parameter Name="idMarca" Mode="In" Type="Int32" />
+            <Parameter Name="idArticulo" Mode="In" Type="Int32" />
+            <Parameter Name="idBodega" Mode="In" Type="Int32" />
+            <Parameter Name="idCompra" Mode="In" Type="Int32" />
+            <Parameter Name="Descripcion" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -997,6 +1021,7 @@
           <FunctionImportMapping FunctionImportName="spInsertarCompra" FunctionName="VentaComputadorasModel.Store.spInsertarCompra" />
           <FunctionImportMapping FunctionImportName="spModificar" FunctionName="VentaComputadorasModel.Store.spModificar" />
           <FunctionImportMapping FunctionImportName="spModificarCompra" FunctionName="VentaComputadorasModel.Store.spModificarCompra" />
+          <FunctionImportMapping FunctionImportName="spInsertarProducto" FunctionName="VentaComputadorasModel.Store.spInsertarProducto" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

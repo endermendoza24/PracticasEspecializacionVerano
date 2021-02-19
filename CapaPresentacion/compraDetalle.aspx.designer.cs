@@ -19,7 +19,16 @@ namespace CapaPresentacion {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdCompra;
+        protected global::System.Web.UI.WebControls.DropDownList txtIdCompra;
+        
+        /// <summary>
+        /// Control tablaCompra.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource tablaCompra;
         
         /// <summary>
         /// Control txtIdArticulo.
@@ -28,7 +37,16 @@ namespace CapaPresentacion {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdArticulo;
+        protected global::System.Web.UI.WebControls.DropDownList txtIdArticulo;
+        
+        /// <summary>
+        /// Control tablaArticulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource tablaArticulo;
         
         /// <summary>
         /// Control txtNombreArticulo.
@@ -37,7 +55,7 @@ namespace CapaPresentacion {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreArticulo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNombreArticulo;
         
         /// <summary>
         /// Control txtCantidad.
@@ -46,7 +64,7 @@ namespace CapaPresentacion {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCantidad;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtCantidad;
         
         /// <summary>
         /// Control txtPrecioUnitario.
@@ -55,7 +73,7 @@ namespace CapaPresentacion {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrecioUnitario;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtPrecioUnitario;
         
         /// <summary>
         /// Control txtDescuento.
@@ -64,7 +82,7 @@ namespace CapaPresentacion {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescuento;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtDescuento;
         
         /// <summary>
         /// Control txtTotal.
@@ -73,7 +91,7 @@ namespace CapaPresentacion {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTotal;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtTotal;
         
         /// <summary>
         /// Control txtIdMarca.
@@ -82,16 +100,16 @@ namespace CapaPresentacion {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdMarca;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtIdMarca;
         
         /// <summary>
-        /// Control btnInsertarCompra.
+        /// Control btnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInsertarCompra;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnGuardar;
         
         /// <summary>
         /// Control gvMostrarCompras.

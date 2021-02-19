@@ -317,5 +317,50 @@ namespace CapaDatos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spModificarCompra", idCompraParameter, idArticuloParameter, nombreArticuloParameter, cantidadParameter, precioUnitarioParameter, descuentoParameter, totalParameter, idMarcaParameter);
         }
+    
+        public virtual int spInsertarProducto(Nullable<int> codigoArticuloBodega, Nullable<decimal> costo, Nullable<decimal> precioVenta, Nullable<int> existencia, string lote, Nullable<int> idMarca, Nullable<int> idArticulo, Nullable<int> idBodega, Nullable<int> idCompra, string descripcion)
+        {
+            var codigoArticuloBodegaParameter = codigoArticuloBodega.HasValue ?
+                new ObjectParameter("codigoArticuloBodega", codigoArticuloBodega) :
+                new ObjectParameter("codigoArticuloBodega", typeof(int));
+    
+            var costoParameter = costo.HasValue ?
+                new ObjectParameter("Costo", costo) :
+                new ObjectParameter("Costo", typeof(decimal));
+    
+            var precioVentaParameter = precioVenta.HasValue ?
+                new ObjectParameter("precioVenta", precioVenta) :
+                new ObjectParameter("precioVenta", typeof(decimal));
+    
+            var existenciaParameter = existencia.HasValue ?
+                new ObjectParameter("Existencia", existencia) :
+                new ObjectParameter("Existencia", typeof(int));
+    
+            var loteParameter = lote != null ?
+                new ObjectParameter("Lote", lote) :
+                new ObjectParameter("Lote", typeof(string));
+    
+            var idMarcaParameter = idMarca.HasValue ?
+                new ObjectParameter("idMarca", idMarca) :
+                new ObjectParameter("idMarca", typeof(int));
+    
+            var idArticuloParameter = idArticulo.HasValue ?
+                new ObjectParameter("idArticulo", idArticulo) :
+                new ObjectParameter("idArticulo", typeof(int));
+    
+            var idBodegaParameter = idBodega.HasValue ?
+                new ObjectParameter("idBodega", idBodega) :
+                new ObjectParameter("idBodega", typeof(int));
+    
+            var idCompraParameter = idCompra.HasValue ?
+                new ObjectParameter("idCompra", idCompra) :
+                new ObjectParameter("idCompra", typeof(int));
+    
+            var descripcionParameter = descripcion != null ?
+                new ObjectParameter("Descripcion", descripcion) :
+                new ObjectParameter("Descripcion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertarProducto", codigoArticuloBodegaParameter, costoParameter, precioVentaParameter, existenciaParameter, loteParameter, idMarcaParameter, idArticuloParameter, idBodegaParameter, idCompraParameter, descripcionParameter);
+        }
     }
 }
