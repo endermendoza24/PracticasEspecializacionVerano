@@ -5,3 +5,4 @@ c:\users\hp\documents\visual studio 2015\Projects\VentaInformatica\CapaDatos\bin
 c:\users\hp\documents\visual studio 2015\Projects\VentaInformatica\CapaDatos\bin\Debug\EntityFramework.xml
 c:\users\hp\documents\visual studio 2015\Projects\VentaInformatica\CapaDatos\obj\Debug\CapaDatos.dll
 c:\users\hp\documents\visual studio 2015\Projects\VentaInformatica\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\HP\documents\visual studio 2015\Projects\VentaInformatica\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache

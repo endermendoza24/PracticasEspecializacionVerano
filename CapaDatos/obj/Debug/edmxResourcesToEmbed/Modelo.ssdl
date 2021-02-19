@@ -307,6 +307,18 @@
     <Parameter Name="Total" Type="decimal" Mode="In" />
     <Parameter Name="idMarca" Type="int" Mode="In" />
   </Function>
+  <Function Name="spInsertarProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codigoArticuloBodega" Type="int" Mode="In" />
+    <Parameter Name="Costo" Type="decimal" Mode="In" />
+    <Parameter Name="precioVenta" Type="decimal" Mode="In" />
+    <Parameter Name="Existencia" Type="int" Mode="In" />
+    <Parameter Name="Lote" Type="nvarchar" Mode="In" />
+    <Parameter Name="idMarca" Type="int" Mode="In" />
+    <Parameter Name="idArticulo" Type="int" Mode="In" />
+    <Parameter Name="idBodega" Type="int" Mode="In" />
+    <Parameter Name="idCompra" Type="int" Mode="In" />
+    <Parameter Name="Descripcion" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="spModificar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idVenta" Type="int" Mode="In" />
     <Parameter Name="idArticulo" Type="int" Mode="In" />

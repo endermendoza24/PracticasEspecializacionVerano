@@ -8,14 +8,14 @@ namespace CapaDatos
 {
     public class MetodosAlmacen
     {
-        EntidadesAlmacen entidades = new EntidadesAlmacen();
+      
         VentaComputadorasEntities bd = new VentaComputadorasEntities();
 
         public bool insertarAlmacen(tblProductosAlmacen tabla)
         {
-            bd.spInsertarProducto(entidades.codigoArticuloBodega, entidades.Costo, entidades.precioVenta,
-                entidades.Existencia, entidades.Lote, entidades.idMarca, entidades.idArticulo, entidades.idBodega,
-                entidades.idCompra, entidades.Descripcion);
+            bd.spInsertarProducto(tabla.codigoArticuloBodega, tabla.Costo, tabla.precioVenta,
+                tabla.Existencia, tabla.Lote, tabla.idMarca, tabla.idArticulo,
+                tabla.idBodega, tabla.idCompra, tabla.Descripcion);
             bd.SaveChanges();
             return true;
         }

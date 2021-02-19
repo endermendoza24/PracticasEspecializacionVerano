@@ -418,6 +418,18 @@
       <Parameter Name="Total" Mode="In" Type="Decimal" />
       <Parameter Name="idMarca" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="spInsertarProducto">
+      <Parameter Name="codigoArticuloBodega" Mode="In" Type="Int32" />
+      <Parameter Name="Costo" Mode="In" Type="Decimal" />
+      <Parameter Name="precioVenta" Mode="In" Type="Decimal" />
+      <Parameter Name="Existencia" Mode="In" Type="Int32" />
+      <Parameter Name="Lote" Mode="In" Type="String" />
+      <Parameter Name="idMarca" Mode="In" Type="Int32" />
+      <Parameter Name="idArticulo" Mode="In" Type="Int32" />
+      <Parameter Name="idBodega" Mode="In" Type="Int32" />
+      <Parameter Name="idCompra" Mode="In" Type="Int32" />
+      <Parameter Name="Descripcion" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
