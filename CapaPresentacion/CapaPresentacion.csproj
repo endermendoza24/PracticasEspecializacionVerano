@@ -97,6 +97,7 @@
     <Content Include="almacenProductos.aspx" />
     <Content Include="bootstrap\bootstrap.min.css" />
     <Content Include="compraDetalle.aspx" />
+    <Content Include="css\estilosFooter.css" />
     <Content Include="css\styles.css" />
     <Content Include="ventasDetalles.aspx" />
     <Content Include="packages.config" />

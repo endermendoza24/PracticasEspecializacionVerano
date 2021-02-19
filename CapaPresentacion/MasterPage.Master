@@ -12,27 +12,30 @@
     <script src="scripts/popper.min.js"></script>
     <script src="scripts/jquery-3.5.1.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
-    
+    <link href="css/estilosFooter.css" rel="stylesheet" />
 
 </head>
 <body>
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="TechnologicalStock.aspx">Technological Stock</a>
+  <a class="navbar-brand" href="#">Almacen tecnológico</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="TechnologicalStock.aspx">Data entry <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="almacenProductos.aspx">Productos <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="comprasDetalles.aspx">Compras</a>
+        <a class="nav-link" href="compraDetalle.aspx">Compras</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Login.aspx">Login</a>
+        <a class="nav-link" href="ventasDetalles.aspx">Ventas</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Catálogos</a>
       </li>
     </ul>
   </div>
@@ -42,7 +45,7 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Almacen tecnológico</h1>
-    <p id="te" class="lead">Venta de pcs de escritorio, laptops, impresoras, todo a super precio</p>
+    <p id="te" class="lead">Sistema de venta y compra de productos tecnológicos, computadores de escritorio, laptops, impresoras y más.</p>
   </div>
 </div>
 
@@ -59,51 +62,21 @@
     </div>
     </form>
 
-<footer class="section footer-classic context-dark bg-image" style="background: #404040;">
-        <div class="container">
-          <div class="row row-30">
-            <div class="col-md-4 col-xl-5">
-              <div class="pr-xl-4"><a class="brand" href="#"><img class="brand-logo-light" src="Images/yo.png" alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
-                <p>Any questions about the operation of this site can contact me as follows</p>
-                <!-- Rights-->
-                <p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span></span><span>. </span><span>All Rights Reserved.</span></p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <h5>Contacts</h5>
-              <dl class="contact-list">
-                <dt>Address:</dt>
-                <dd>Courthouse, 1/2 block east, El Rosario, Carazo, Nicaragua</dd>
-              </dl>
-              <dl class="contact-list">
-                <dt>email:</dt>
-                <dd><a href="mailto:#">endermendoza12@gmail.com</a></dd>
-              </dl>
-              <dl class="contact-list">
-                <dt>phones:</dt>
-                <dd><a href="#"></a> <span>te</span> <a href="tel: 82072291"></a>
-                </dd>
-              </dl>
-            </div>
-            <div class="col-md-4 col-xl-3">
-              <h5>Links</h5>
-              <ul class="nav-list">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contacts</a></li>
-                <li><a href="#">Pricing</a></li>
-              </ul>
-            </div>
-          </div>
+    <%--Footer section--%>
+    <br />
+    <br />
+    <div class="bottom section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="copyright">
+          <p>© <span>2021</span> <a href="#" class="transition">Oswald Balladares - Greyvin Mora</a> Todos los derechos reservados.</p>
         </div>
-        <div class="row no-gutters social-container">
-          <div class="col"><a class="social-inner" href=""><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
-          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
-          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
-          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
-        </div>
-      </footer>
-
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
+
+
