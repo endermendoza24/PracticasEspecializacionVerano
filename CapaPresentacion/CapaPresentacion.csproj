@@ -96,9 +96,10 @@
   <ItemGroup>
     <Content Include="almacenProductos.aspx" />
     <Content Include="bootstrap\bootstrap.min.css" />
+    <Content Include="catArticulo.aspx" />
     <Content Include="compraDetalle.aspx" />
     <Content Include="css\estilosFooter.css" />
-    <Content Include="css\styles.css" />
+    <Content Include="css\favicon.ico" />
     <Content Include="ventasDetalles.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -130,6 +131,13 @@
     </Compile>
     <Compile Include="almacenProductos.aspx.designer.cs">
       <DependentUpon>almacenProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catArticulo.aspx.cs">
+      <DependentUpon>catArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catArticulo.aspx.designer.cs">
+      <DependentUpon>catArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="compraDetalle.aspx.cs">
       <DependentUpon>compraDetalle.aspx</DependentUpon>

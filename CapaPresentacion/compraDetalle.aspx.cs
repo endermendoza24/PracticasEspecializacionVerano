@@ -16,7 +16,7 @@ namespace CapaPresentacion
         MetodosNegocio metodo = new MetodosNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            gvMostrarCompras.DataBind();
         }
 
         protected void btnInsertarCompra_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace CapaPresentacion
             catch (Exception)
             {
                 gvMostrarCompras.DataBind();
-                Response.Redirect("ventasDetalles.aspx");
+                Response.Redirect("<script> alert('Ha ocurrido un error inesperado'); </script>");
             }
         }
     }

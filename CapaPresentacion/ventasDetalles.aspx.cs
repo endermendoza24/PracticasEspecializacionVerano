@@ -16,23 +16,35 @@ namespace CapaPresentacion
         MetodosNegocio metodoNegocio = new MetodosNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            dtgMostrarDatos.DataBind();
+           
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            entidades.idVenta = Convert.ToInt32(txtIdVenta.Text);
-            entidades.idArticulo = Convert.ToInt32(txtIdArticulo.Text);
-            entidades.nombreProducto = Convert.ToString(txtNombreProducto.Value);
-            entidades.Cantidad = Convert.ToInt32(txtCantidad.Value);
-            entidades.PrecioUnitario = Convert.ToDecimal(txtPrecioUnitario.Value);
-            entidades.Descuento = Convert.ToDecimal(txtDescuento.Value);
-            entidades.Subtotal = Convert.ToDecimal(txtSubtotal.Value);
-            entidades.Total = Convert.ToDecimal(txtTotal.Value);
-            entidades.codigoVentaDetalles = Convert.ToInt32(txtCodVenta.Value);
-            metodoNegocio.insertarVenta(entidades);
-            dtgMostrarDatos.DataBind();
+            guardarVenta();
+        }
 
+        public void guardarVenta()
+        {
+            try
+            {
+                entidades.idVenta = Convert.ToInt32(txtIdVenta.Text);
+                entidades.idArticulo = Convert.ToInt32(txtIdArticulo.Text);
+                entidades.nombreProducto = Convert.ToString(txtNombreProducto.Value);
+                entidades.Cantidad = Convert.ToInt32(txtCantidad.Value);
+                entidades.PrecioUnitario = Convert.ToDecimal(txtPrecioUnitario.Value);
+                entidades.Descuento = Convert.ToDecimal(txtDescuento.Value);
+                entidades.Subtotal = Convert.ToDecimal(txtSubtotal.Value);
+                entidades.Total = Convert.ToDecimal(txtTotal.Value);
+                entidades.codigoVentaDetalles = Convert.ToInt32(txtCodVenta.Value);
+                metodoNegocio.insertarVenta(entidades);
+                dtgMostrarDatos.DataBind();
+
+            }
+            catch (Exception)
+            {
+                Response.Write("<script> alert('Ha ocurrido un error inesperado'); </script>");
+            }
         }
     }
 }

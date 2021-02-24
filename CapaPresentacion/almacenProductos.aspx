@@ -1,103 +1,173 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="almacenProductos.aspx.cs" Inherits="CapaPresentacion.almacenProductos" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
+CodeBehind="almacenProductos.aspx.cs" Inherits="CapaPresentacion.almacenProductos" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  <link href="css/styles.css" rel="stylesheet" />
 
+  <div class="container" id="productosAlmacen">
+    <h2>Productos almacén</h2>
 
-     <link href="css/styles.css" rel="stylesheet" />  
-           
-    <div class="container" id="ventasDetalles">
-        <h2>Compras detalles</h2>
-        
-            <div class="form-group">
-                <label for="first-name">Código artículo bodega</label>
-                <%--<input type="number" class="form-control" placeholder="Id ventas" id="txtIdVenta" runat="server"/>--%>
-                <input type="number" class="form-control" id="txtCodigoArtBodega" placeholder="Código bodega" runat="server"/>
+    <div class="form-group">
+      <label for="first-name">Código artículo bodega</label>
+      <input type="number" class="form-control" id="txtCodigoArtBodega" placeholder="Código bodega" runat="server" />
+    </div>
+    <div class="form-group">
+      <label for="last-name">Costo</label>
+      <input id="txtCosto" type="number" runat="server" class="form-control" placeholder="Costo" />
+    </div>
+    <div class="form-group">
+      <label for="country">Precio venta</label>
+      <input type="text" class="form-control" placeholder="Precio venta" id="txtPrecioVenta" runat="server" />
+    </div>
+    <div class="form-group">
+      <label for="number">Existencia</label>
+      <input type="number" class="form-control" placeholder="Exxistencia" id="txtExistencia" runat="server" />
+    </div>
+    <div class="form-group">
+      <label for="age">Lote</label>
+      <input type="text" class="form-control" placeholder="Lote" id="txtLote" runat="server" />
+    </div>
+    <div class="form-group">
+      <label for="email">Id marca</label>
+      <asp:DropDownList
+        ID="txtIdMarca"
+        CssClass="form-control"
+        runat="server"
+        DataSourceID="tablaMarca"
+        DataTextField="codigoMarca"
+        DataValueField="codigoMarca"
+      ></asp:DropDownList>
+      <asp:SqlDataSource
+        ID="tablaMarca"
+        runat="server"
+        ConnectionString="<%$ ConnectionStrings:VentaComputadorasConnectionString11 %>"
+        SelectCommand="SELECT * FROM [catMarcas]"
+      ></asp:SqlDataSource>
+    </div>
 
-            </div>
-            <div class="form-group">
-                <label for="last-name">Costo</label>
-                <input id="txtCosto" type="number" runat="server" class="form-control" placeholder="Costo"/>
-                
-            </div>
-            <div class="form-group">
-                <label for="country">Precio venta</label>
-                <input type="text" class="form-control" placeholder="Precio venta" id="txtPrecioVenta" runat="server"/>
-            </div>
-            <div class="form-group">
-                <label for="number">Existencia</label>
-                <input type="number" class="form-control" placeholder="Exxistencia" id="txtExistencia" runat="server"/>
-            </div>
-            <div class="form-group">
-                <label for="age">Lote</label>
-                <input type="text" class="form-control" placeholder="Lote" id="txtLote" runat="server"/>
-            </div>
-            <div class="form-group">
-                <label for="email">Id marca</label>
-                <asp:DropDownList ID="txtIdMarca" CssClass="form-control" runat="server" DataSourceID="tablaMarca" DataTextField="codigoMarca" DataValueField="codigoMarca"></asp:DropDownList>
-                <asp:SqlDataSource ID="tablaMarca" runat="server" ConnectionString="<%$ ConnectionStrings:VentaComputadorasConnectionString11 %>" SelectCommand="SELECT * FROM [catMarcas]"></asp:SqlDataSource>
-            </div>
-           
-            <div class="form-group">
-                <label for="education">Articulo</label>
-                <asp:DropDownList ID="txtIdArticulo" CssClass="form-control" runat="server" DataSourceID="arrt" DataTextField="codigoArticulo" DataValueField="codigoArticulo"></asp:DropDownList>
-                <asp:SqlDataSource ID="arrt" runat="server" ConnectionString="<%$ ConnectionStrings:VentaComputadorasConnectionString11 %>" SelectCommand="SELECT * FROM [catArticulos]"></asp:SqlDataSource>
-            </div>
-	    <div class="form-group">
-                <label for="education">Id almacen</label>
-            <asp:DropDownList ID="txtIdBodega" CssClass="form-control" runat="server" DataSourceID="almacen" DataTextField="idBodega" DataValueField="idBodega"></asp:DropDownList>
-                <asp:SqlDataSource ID="almacen" runat="server" ConnectionString="<%$ ConnectionStrings:VentaComputadorasConnectionString11 %>" SelectCommand="SELECT * FROM [catBodega]"></asp:SqlDataSource>
-            </div>
+    <div class="form-group">
+      <label for="education">Articulo</label>
+      <asp:DropDownList
+        ID="txtIdArticulo"
+        CssClass="form-control"
+        runat="server"
+        DataSourceID="arrt"
+        DataTextField="codigoArticulo"
+        DataValueField="codigoArticulo"
+      ></asp:DropDownList>
+      <asp:SqlDataSource
+        ID="arrt"
+        runat="server"
+        ConnectionString="<%$ ConnectionStrings:VentaComputadorasConnectionString11 %>"
+        SelectCommand="SELECT * FROM [catArticulos]"
+      ></asp:SqlDataSource>
+    </div>
+    <div class="form-group">
+      <label for="education">Id almacen</label>
+      <asp:DropDownList
+        ID="txtIdBodega"
+        CssClass="form-control"
+        runat="server"
+        DataSourceID="almacen"
+        DataTextField="idBodega"
+        DataValueField="idBodega"
+      ></asp:DropDownList>
+      <asp:SqlDataSource
+        ID="almacen"
+        runat="server"
+        ConnectionString="<%$ ConnectionStrings:VentaComputadorasConnectionString11 %>"
+        SelectCommand="SELECT * FROM [catBodega]"
+      ></asp:SqlDataSource>
+    </div>
 
-        <div class="form-group">
-                <label for="education">Id compra</label>
-            <asp:DropDownList ID="txtIdCompra" CssClass="form-control" runat="server" DataSourceID="compra" DataTextField="codigoCompra" DataValueField="codigoCompra"></asp:DropDownList>
+    <div class="form-group">
+      <label for="education">Id compra</label>
+      <asp:DropDownList
+        ID="txtIdCompra"
+        CssClass="form-control"
+        runat="server"
+        DataSourceID="compra"
+        DataTextField="codigoCompra"
+        DataValueField="codigoCompra"
+      ></asp:DropDownList>
+      <asp:SqlDataSource
+        ID="compra"
+        runat="server"
+        ConnectionString="<%$ ConnectionStrings:VentaComputadorasConnectionString11 %>"
+        SelectCommand="SELECT * FROM [tblCompras]"
+      ></asp:SqlDataSource>
+    </div>
 
-                <asp:SqlDataSource ID="compra" runat="server" ConnectionString="<%$ ConnectionStrings:VentaComputadorasConnectionString11 %>" SelectCommand="SELECT * FROM [tblCompras]"></asp:SqlDataSource>
+    <div class="form-group">
+      <label for="education">Descripción</label>
+      <input type="text" runat="server" id="txtDescripcion" class="form-control" placeholder="Descripción" />
+    </div>
 
-            </div>
+    <div class="clearfix">
+      <asp:Button
+        ID="btnGuardarProducto"
+        runat="server"
+        Text="Guardar producto"
+        CssClass="btn btn-info btn-lg btn-responsive"
+        OnClick="btnGuardarProducto_Click"
+      />
+      <div></div>
+    </div>
 
-         <div class="form-group">
-                <label for="education">Descripción</label>
-                <input type="text" runat="server" id="txtDescripcion" class="form-control" placeholder="Descripción" />
-  
-            </div>
-            
-
-        <div class="clearfix">            
-             <asp:Button ID="btnGuardarProducto" runat="server" Text="Guardar producto" CssClass="btn btn-info btn-lg btn-responsive" OnClick="btnGuardarProducto_Click" />
-       <div>
-           </div>
-                </div>
-
-            </div>
-            
-    
-
-
-
-
-
-
-
-
-
-
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered" DataKeyNames="codigoArticuloBodega" DataSourceID="SqlDataSource1" AutoGenerateDeleteButton="True" AutoGenerateEditButton="True">
-        <Columns>
-            <asp:BoundField DataField="codigoArticuloBodega" HeaderText="codigoArticuloBodega" ReadOnly="True" SortExpression="codigoArticuloBodega" />
-            <asp:BoundField DataField="Costo" HeaderText="Costo" SortExpression="Costo" />
-            <asp:BoundField DataField="precioVenta" HeaderText="precioVenta" SortExpression="precioVenta" />
-            <asp:BoundField DataField="Existencia" HeaderText="Existencia" SortExpression="Existencia" />
-            <asp:BoundField DataField="Lote" HeaderText="Lote" SortExpression="Lote" />
-            <asp:BoundField DataField="idMarca" HeaderText="idMarca" SortExpression="idMarca" />
-            <asp:BoundField DataField="idArticulo" HeaderText="idArticulo" SortExpression="idArticulo" />
-            <asp:BoundField DataField="idBodega" HeaderText="idBodega" SortExpression="idBodega" />
-            <asp:BoundField DataField="idCompra" HeaderText="idCompra" SortExpression="idCompra" />
-            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
-        </Columns>
+    <br />
+    <br />
+    <asp:GridView
+      ID="dtgBodega"
+      runat="server"
+      AutoGenerateColumns="False"
+      CssClass="table table-bordered"
+      DataKeyNames="codigoArticuloBodega"
+      DataSourceID="SqlDataSource1"
+      AutoGenerateDeleteButton="True"
+      AutoGenerateEditButton="True"
+      BackColor="White"
+      BorderColor="#999999"
+      BorderStyle="Solid"
+      BorderWidth="1px"
+      CellPadding="3"
+      ForeColor="Black"
+      GridLines="Vertical"
+    >
+      <AlternatingRowStyle BackColor="#CCCCCC" />
+      <Columns>
+        <asp:BoundField
+          DataField="codigoArticuloBodega"
+          HeaderText="codigoArticuloBodega"
+          ReadOnly="True"
+          SortExpression="codigoArticuloBodega"
+        />
+        <asp:BoundField DataField="Costo" HeaderText="Costo" SortExpression="Costo" />
+        <asp:BoundField DataField="precioVenta" HeaderText="precioVenta" SortExpression="precioVenta" />
+        <asp:BoundField DataField="Existencia" HeaderText="Existencia" SortExpression="Existencia" />
+        <asp:BoundField DataField="Lote" HeaderText="Lote" SortExpression="Lote" />
+        <asp:BoundField DataField="idMarca" HeaderText="idMarca" SortExpression="idMarca" />
+        <asp:BoundField DataField="idArticulo" HeaderText="idArticulo" SortExpression="idArticulo" />
+        <asp:BoundField DataField="idBodega" HeaderText="idBodega" SortExpression="idBodega" />
+        <asp:BoundField DataField="idCompra" HeaderText="idCompra" SortExpression="idCompra" />
+        <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
+      </Columns>
+      <FooterStyle BackColor="#CCCCCC" />
+      <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+      <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+      <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+      <SortedAscendingCellStyle BackColor="#F1F1F1" />
+      <SortedAscendingHeaderStyle BackColor="#808080" />
+      <SortedDescendingCellStyle BackColor="#CAC9C9" />
+      <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:VentaComputadorasConnectionString10 %>" SelectCommand="SELECT * FROM [tblProductosAlmacen]" DeleteCommand="DELETE FROM [tblProductosAlmacen] WHERE [codigoArticuloBodega] = @codigoArticuloBodega" UpdateCommand="UPDATE [tblProductosAlmacen] SET [codigoArticuloBodega] = @codigoArticuloBodega,
-        [Costo] = @Costo, [precioVenta] = @precioVenta, [Existencia] = @Existencia, [Lote] = @Lote, [idMarca] = @idMarca, [idArticulo] = @idArticulo, [idBodega] = @idBodega, [idCompra] = @idCompra, [Descripcion] = @Descripcion"></asp:SqlDataSource>
-
+    <asp:SqlDataSource
+      ID="SqlDataSource1"
+      runat="server"
+      ConnectionString="<%$ ConnectionStrings:VentaComputadorasConnectionString10 %>"
+      SelectCommand="SELECT * FROM [tblProductosAlmacen]"
+      DeleteCommand="DELETE FROM [tblProductosAlmacen] WHERE [codigoArticuloBodega] = @codigoArticuloBodega"
+      UpdateCommand="UPDATE [tblProductosAlmacen] SET [codigoArticuloBodega] = @codigoArticuloBodega,
+        [Costo] = @Costo, [precioVenta] = @precioVenta, [Existencia] = @Existencia, [Lote] = @Lote, [idMarca] = @idMarca, [idArticulo] = @idArticulo, [idBodega] = @idBodega, [idCompra] = @idCompra, [Descripcion] = @Descripcion"
+    ></asp:SqlDataSource>
+  </div>
 </asp:Content>
