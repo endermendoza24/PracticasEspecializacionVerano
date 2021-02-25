@@ -14,11 +14,12 @@
     <script src="scripts/jquery-3.5.1.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <link href="css/estilosFooter.css" rel="stylesheet" />
+   
 </head>
 <body>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <%-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Almacen tecnológico</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -42,7 +43,118 @@
       </li>
     </ul>
   </div>
+</nav>--%>
+
+
+  
+
+
+<%--  nuevo navbar--%>
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Almacén tecnológico</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li>
+        <a class="nav-link" href="almacenProductos.aspx">Productos<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="facturacion.aspx">Facturación</a>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Catálogos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="catArticulo.aspx">Artículos</a>
+          <a class="dropdown-item" href="catBodegas.aspx">Bodegas</a>
+          <a class="dropdown-item" href="catCategoria.aspx">Categorías</a>
+            <a class="dropdown-item" href="catEmpleados.aspx">Empleados</a>
+          <a class="dropdown-item" href="catMarcas.aspx">Marcas</a>
+          <a class="dropdown-item" href="catProveedores.aspx">Proveedores</a>
+        </div>
+
+      </li>
+
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Maestro - Detalle
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="ventasDetalles.aspx">Ventas detalles</a>
+          <a class="dropdown-item" href="compraDetalle.aspx">Compras detalles</a>
+        </div>
+
+      </li>
+    </ul>
+  </div>
 </nav>
+
+
+
+
+   
+
+
+          <%--<li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>    
+            <ul class="nav pull-right">
+          <li class="divider-vertical"></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>--%>
+      </div><!-- /.nav-collapse -->
+    </div>
+  </div><!-- /navbar-inner -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <div class="jumbotron jumbotron-fluid">

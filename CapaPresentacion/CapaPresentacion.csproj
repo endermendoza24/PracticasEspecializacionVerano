@@ -97,6 +97,12 @@
     <Content Include="almacenProductos.aspx" />
     <Content Include="bootstrap\bootstrap.min.css" />
     <Content Include="catalogos.aspx" />
+    <Content Include="catArticulo.aspx" />
+    <Content Include="catBodegas.aspx" />
+    <Content Include="catCategoria.aspx" />
+    <Content Include="catEmpleados.aspx" />
+    <Content Include="catMarcas.aspx" />
+    <Content Include="catProveedores.aspx" />
     <Content Include="compraDetalle.aspx" />
     <Content Include="css\estilosFooter.css" />
     <Content Include="css\favicon.ico" />
@@ -139,6 +145,48 @@
     </Compile>
     <Compile Include="catalogos.aspx.designer.cs">
       <DependentUpon>catalogos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catArticulo.aspx.cs">
+      <DependentUpon>catArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catArticulo.aspx.designer.cs">
+      <DependentUpon>catArticulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catBodegas.aspx.cs">
+      <DependentUpon>catBodegas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catBodegas.aspx.designer.cs">
+      <DependentUpon>catBodegas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catCategoria.aspx.cs">
+      <DependentUpon>catCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catCategoria.aspx.designer.cs">
+      <DependentUpon>catCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catEmpleados.aspx.cs">
+      <DependentUpon>catEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catEmpleados.aspx.designer.cs">
+      <DependentUpon>catEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catMarcas.aspx.cs">
+      <DependentUpon>catMarcas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catMarcas.aspx.designer.cs">
+      <DependentUpon>catMarcas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catProveedores.aspx.cs">
+      <DependentUpon>catProveedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catProveedores.aspx.designer.cs">
+      <DependentUpon>catProveedores.aspx</DependentUpon>
     </Compile>
     <Compile Include="compraDetalle.aspx.cs">
       <DependentUpon>compraDetalle.aspx</DependentUpon>
