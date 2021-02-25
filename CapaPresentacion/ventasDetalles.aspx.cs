@@ -33,9 +33,12 @@ namespace CapaPresentacion
                 entidades.nombreProducto = Convert.ToString(txtNombreProducto.Value);
                 entidades.Cantidad = Convert.ToInt32(txtCantidad.Value);
                 entidades.PrecioUnitario = Convert.ToDecimal(txtPrecioUnitario.Value);
-                entidades.Descuento = Convert.ToDecimal(txtDescuento.Value);
-                entidades.Subtotal = Convert.ToDecimal(txtSubtotal.Value);
-                entidades.Total = Convert.ToDecimal(txtTotal.Value);
+                //entidades.Descuento = Convert.ToDecimal(txtDescuento.Value);
+                //entidades.Subtotal = Convert.ToDecimal(txtSubtotal.Value);
+                //entidades.Total = Convert.ToDecimal(txtTotal.Value);
+                entidades.Subtotal = entidades.Cantidad * entidades.PrecioUnitario;
+                entidades.Descuento = (entidades.Subtotal * 10) / 100;
+                entidades.Total = (entidades.Subtotal - entidades.Descuento);
                 entidades.codigoVentaDetalles = Convert.ToInt32(txtCodVenta.Value);
                 metodoNegocio.insertarVenta(entidades);
                 dtgMostrarDatos.DataBind();

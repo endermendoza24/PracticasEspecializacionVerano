@@ -75,7 +75,7 @@
       <PropertyRef Name="codigoCompra" />
     </Key>
     <Property Name="codigoCompra" Type="Int32" Nullable="false" />
-    <Property Name="fechaCompra" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaCompra" Type="DateTime" Precision="0" />
     <Property Name="idEmpleado" Type="Int32" Nullable="false" />
     <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="IVA" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
@@ -115,7 +115,7 @@
     <Property Name="idArticulo" Type="Int32" Nullable="false" />
     <Property Name="idBodega" Type="Int32" Nullable="false" />
     <Property Name="idCompra" Type="Int32" Nullable="false" />
-    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="catArticulos" Relationship="Self.tblProductosAlmacen_idArticulo_catArticulos_codigoArticulo" FromRole="tblProductosAlmacen" ToRole="catArticulos" />
     <NavigationProperty Name="catBodega" Relationship="Self.tblProductosAlmacen_idBodega_catBodega_idBodega" FromRole="tblProductosAlmacen" ToRole="catBodega" />
     <NavigationProperty Name="catMarcas" Relationship="Self.tblProductosAlmacen_idMarca_catMarcas_codigoMarca" FromRole="tblProductosAlmacen" ToRole="catMarcas" />
@@ -125,7 +125,7 @@
       <PropertyRef Name="codigoVentas" />
     </Key>
     <Property Name="codigoVentas" Type="Int32" Nullable="false" />
-    <Property Name="FechaVenta" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaVenta" Type="DateTime" Precision="0" />
     <Property Name="Cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="IVA" Type="Decimal" Precision="18" Scale="0" Nullable="false" />

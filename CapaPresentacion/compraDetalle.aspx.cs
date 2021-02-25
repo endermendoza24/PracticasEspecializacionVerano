@@ -28,17 +28,35 @@ namespace CapaPresentacion
                 entidadCompra.nombreArticulo = Convert.ToString(txtNombreArticulo.Value);
                 entidadCompra.Cantidad = Convert.ToInt32(txtCantidad.Value);
                 entidadCompra.precioUnitario = Convert.ToDecimal(txtPrecioUnitario.Value);
-                entidadCompra.Descuento = Convert.ToDecimal(txtDescuento.Value);
-                entidadCompra.Total = Convert.ToDecimal(txtTotal.Value);
-                entidadCompra.idMarca = Convert.ToInt32(txtIdMarca.Value);
+                //entidadCompra.Descuento = Convert.ToDecimal(txtDescuento.Value);
+                //entidadCompra.Total = Convert.ToDecimal(txtTotal.Value);
+                entidadCompra.Descuento = (10 * (entidadCompra.Cantidad * entidadCompra.precioUnitario) / 100);
+                entidadCompra.Total = (Convert.ToDecimal(txtCantidad.Value) * Convert.ToDecimal(txtPrecioUnitario.Value) -
+                    Convert.ToDecimal(txtDescuento.Value));
+                txtTotal.Value = Convert.ToString(entidadCompra.Total);
+                entidadCompra.idMarca = Convert.ToInt32(drpMarca.Text);
                 metodo.insertarCompra(entidadCompra);
                 gvMostrarCompras.DataBind();
+                limpiar();
             }
             catch (Exception)
             {
                 gvMostrarCompras.DataBind();
+                limpiar();
                 Response.Redirect("<script> alert('Ha ocurrido un error inesperado'); </script>");
             }
+        }
+
+        public void limpiar()
+        {
+            txtIdCompra.SelectedValue = "";
+            txtIdArticulo.Text = "";
+            txtNombreArticulo.Value = "";
+            txtCantidad.Value = "";
+            txtDescuento.Value = "";
+            txtPrecioUnitario.Value = "";
+            txtTotal.Value = "";
+            //drpMarca.Text = "";
         }
     }
 }

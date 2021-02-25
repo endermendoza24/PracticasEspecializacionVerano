@@ -50,22 +50,12 @@
     <Property Name="Ciudad" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Departamento" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="tblCompras">
     <Key>
       <PropertyRef Name="codigoCompra" />
     </Key>
     <Property Name="codigoCompra" Type="int" Nullable="false" />
-    <Property Name="fechaCompra" Type="datetime" Nullable="false" />
+    <Property Name="fechaCompra" Type="date" />
     <Property Name="idEmpleado" Type="int" Nullable="false" />
     <Property Name="Subtotal" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="IVA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
@@ -100,14 +90,14 @@
     <Property Name="idArticulo" Type="int" Nullable="false" />
     <Property Name="idBodega" Type="int" Nullable="false" />
     <Property Name="idCompra" Type="int" Nullable="false" />
-    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="tblVentas">
     <Key>
       <PropertyRef Name="codigoVentas" />
     </Key>
     <Property Name="codigoVentas" Type="int" Nullable="false" />
-    <Property Name="FechaVenta" Type="datetime" Nullable="false" />
+    <Property Name="FechaVenta" Type="date" />
     <Property Name="Cliente" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Subtotal" Type="decimal" Precision="18" Scale="0" Nullable="false" />
     <Property Name="IVA" Type="decimal" Precision="18" Scale="0" Nullable="false" />
@@ -249,37 +239,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="version" Type="int" Mode="In" />
-    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-  </Function>
-  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-  </Function>
-  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-    <Parameter Name="owner_id" Type="int" Mode="In" />
-    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-  </Function>
-  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="spEliminar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="IdVentaDetalles" Type="int" Mode="In" />
   </Function>
@@ -347,7 +306,6 @@
     <EntitySet Name="catEmpleados" EntityType="Self.catEmpleados" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="catMarcas" EntityType="Self.catMarcas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="catProveedores" EntityType="Self.catProveedores" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblCompras" EntityType="Self.tblCompras" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblComprasDetalle" EntityType="Self.tblComprasDetalle" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblProductosAlmacen" EntityType="Self.tblProductosAlmacen" Schema="dbo" store:Type="Tables" />

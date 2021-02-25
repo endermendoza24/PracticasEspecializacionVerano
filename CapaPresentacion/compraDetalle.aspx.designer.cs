@@ -94,13 +94,22 @@ namespace CapaPresentacion {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtTotal;
         
         /// <summary>
-        /// Control txtIdMarca.
+        /// Control drpMarca.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtIdMarca;
+        protected global::System.Web.UI.WebControls.DropDownList drpMarca;
+        
+        /// <summary>
+        /// Control catMarca.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource catMarca;
         
         /// <summary>
         /// Control btnGuardar.

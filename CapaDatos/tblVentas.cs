@@ -20,7 +20,7 @@ namespace CapaDatos
         }
     
         public int codigoVentas { get; set; }
-        public System.DateTime FechaVenta { get; set; }
+        public Nullable<System.DateTime> FechaVenta { get; set; }
         public string Cliente { get; set; }
         public decimal Subtotal { get; set; }
         public decimal IVA { get; set; }

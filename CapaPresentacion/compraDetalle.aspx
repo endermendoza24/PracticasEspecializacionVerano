@@ -57,11 +57,13 @@ CodeBehind="compraDetalle.aspx.cs" Inherits="CapaPresentacion.compraDetalle" %>
     </div>
     <div class="form-group">
       <label for="education">Total</label>
-      <input type="number" class="form-control" placeholder="Total" id="txtTotal" runat="server" />
+      <input type="number" class="form-control" placeholder="Total" id="txtTotal" runat="server" readonly="True" />
     </div>
     <div class="form-group">
       <label for="education">Id marca</label>
-      <input type="number" class="form-control" placeholder="Código marca" id="txtIdMarca" runat="server" />
+      <%--<input type="number" class="form-control" placeholder="Código marca" id="txtIdMarca" runat="server" />--%>
+        <asp:DropDownList ID="drpMarca" runat="server" CssClass="form-control" DataSourceID="catMarca" DataTextField="codigoMarca" DataValueField="codigoMarca"></asp:DropDownList>
+        <asp:SqlDataSource ID="catMarca" runat="server" ConnectionString="<%$ ConnectionStrings:VentaComputadorasConnectionString11 %>" SelectCommand="SELECT * FROM [catMarcas]"></asp:SqlDataSource>
     </div>
     <div class="clearfix">
       <button
@@ -71,8 +73,7 @@ CodeBehind="compraDetalle.aspx.cs" Inherits="CapaPresentacion.compraDetalle" %>
         runat="server"
         onserverclick="btnInsertarCompra_Click"
       >
-        Guardar
-      </button>
+        Guardar</button>
       <div></div>
     </div>
 
@@ -95,14 +96,14 @@ CodeBehind="compraDetalle.aspx.cs" Inherits="CapaPresentacion.compraDetalle" %>
     >
       <AlternatingRowStyle BackColor="#CCCCCC" />
       <Columns>
-        <asp:BoundField DataField="idCompra" HeaderText="idCompra" ReadOnly="True" SortExpression="idCompra" />
-        <asp:BoundField DataField="idArticulo" HeaderText="idArticulo" ReadOnly="True" SortExpression="idArticulo" />
-        <asp:BoundField DataField="nombreArticulo" HeaderText="nombreArticulo" SortExpression="nombreArticulo" />
+        <asp:BoundField DataField="idCompra" HeaderText="Id compra" ReadOnly="True" SortExpression="idCompra" />
+        <asp:BoundField DataField="idArticulo" HeaderText="Id artículo" ReadOnly="True" SortExpression="idArticulo" />
+        <asp:BoundField DataField="nombreArticulo" HeaderText="Nombre Articulo" SortExpression="nombreArticulo" />
         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
-        <asp:BoundField DataField="precioUnitario" HeaderText="precioUnitario" SortExpression="precioUnitario" />
+        <asp:BoundField DataField="precioUnitario" HeaderText="Precio unitario" SortExpression="precioUnitario" />
         <asp:BoundField DataField="Descuento" HeaderText="Descuento" SortExpression="Descuento" />
         <asp:BoundField DataField="Total" HeaderText="Total" SortExpression="Total" />
-        <asp:BoundField DataField="idMarca" HeaderText="idMarca" SortExpression="idMarca" />
+        <asp:BoundField DataField="idMarca" HeaderText="Id marca" SortExpression="idMarca" />
       </Columns>
       <FooterStyle BackColor="#CCCCCC" />
       <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

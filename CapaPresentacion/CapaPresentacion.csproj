@@ -96,10 +96,11 @@
   <ItemGroup>
     <Content Include="almacenProductos.aspx" />
     <Content Include="bootstrap\bootstrap.min.css" />
-    <Content Include="catArticulo.aspx" />
+    <Content Include="catalogos.aspx" />
     <Content Include="compraDetalle.aspx" />
     <Content Include="css\estilosFooter.css" />
     <Content Include="css\favicon.ico" />
+    <Content Include="facturacion.aspx" />
     <Content Include="ventasDetalles.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -132,12 +133,12 @@
     <Compile Include="almacenProductos.aspx.designer.cs">
       <DependentUpon>almacenProductos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="catArticulo.aspx.cs">
-      <DependentUpon>catArticulo.aspx</DependentUpon>
+    <Compile Include="catalogos.aspx.cs">
+      <DependentUpon>catalogos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="catArticulo.aspx.designer.cs">
-      <DependentUpon>catArticulo.aspx</DependentUpon>
+    <Compile Include="catalogos.aspx.designer.cs">
+      <DependentUpon>catalogos.aspx</DependentUpon>
     </Compile>
     <Compile Include="compraDetalle.aspx.cs">
       <DependentUpon>compraDetalle.aspx</DependentUpon>
@@ -145,6 +146,13 @@
     </Compile>
     <Compile Include="compraDetalle.aspx.designer.cs">
       <DependentUpon>compraDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="facturacion.aspx.cs">
+      <DependentUpon>facturacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="facturacion.aspx.designer.cs">
+      <DependentUpon>facturacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="ventasDetalles.aspx.cs">
       <DependentUpon>ventasDetalles.aspx</DependentUpon>
